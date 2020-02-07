@@ -119,12 +119,12 @@
 - (void)injectScriptFile:(CDVInvokedUrlCommand*)command
 {
     #if WK_WEB_VIEW_ONLY
-      [[CDVWKInAppBrowser getInstance] injectScriptFile:command];
+      [[CDVWKInAppBrowser getInstance] injectScriptCode:command];
     #else
       if(self.usewkwebview){
-          [[CDVWKInAppBrowser getInstance] injectScriptFile:command];
+          [[CDVWKInAppBrowser getInstance] injectScriptCode:command];
       }else{
-          [[CDVUIInAppBrowser getInstance] injectScriptFile:command];
+          [[CDVUIInAppBrowser getInstance] injectScriptCode:command];
       }
     #endif
 }
